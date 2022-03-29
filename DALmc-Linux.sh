@@ -1,8 +1,8 @@
-echo "[DALmc] MacOS DALmc Modpack installer"
+echo "[DALmc] Linux DALmc Modpack installer"
 
 
 
-if [ -d "/Users/%USER%/Library/Application Support/minecraft" ]
+if [ -d "/.minecraft" ]
 then
     echo "[DALmc] .minecraft directory exists."
 else
@@ -12,10 +12,10 @@ fi
 
 # ----------------------------------------------------
 
-if [ -d "/Users/%USER%/Library/Application Support/minecraft/mods" ]
+if [ -d "/.minecraft/mods" ]
 then
     echo "[DALmc] mods directory exists. Deleting it now..."
-    rm -d -r "/Users/%USER%/Library/Application Support/minecraft/mods"
+    rm -d -r "/.minecraft/mods"
 else
     echo "[DALmc] The mods directory doesn't exist."
     exit 0
@@ -23,10 +23,10 @@ fi
 
 # ----------------------------------------------------
 
-if [ -d "/Users/%USER%/Library/Application Support/minecraft/config" ]
+if [ -d "/.minecraft/config" ]
 then
     echo "[DALmc] config directory exists. Deleting it now..."
-    rm -d -r "/Users/%USER%/Library/Application Support/minecraft/config"
+    rm -d -r "/.minecraft/config"
 else
     echo "[DALmc] The config directory doesn't exist."
     exit 0
@@ -35,7 +35,7 @@ fi
 # ----------------------------------------------------
 
 
-cd /Users/%USER%/Library/Application Support/minecraft || exit 0
+cd /.minecraft || exit 0
 
 echo "[DALmc] Cloning the mods repository..."
 git clone https://github.com/DALmc/mods.git
